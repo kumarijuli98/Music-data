@@ -1,0 +1,5 @@
+PUT file://<file_path>/customer.csv @CUSTOMER/ui1684939912230
+
+COPY INTO "MUSIC_DATA"."PUBLIC"."CUSTOMER" FROM @/ui1684939912230 FILE_FORMAT = '"MUSIC_DATA"."PUBLIC"."CSV_FORMAT"' ON_ERROR = 'ABORT_STATEMENT' PURGE = TRUE;
+
+Text.Select([billing_address],{"A".."z", " ","0".."9"})
